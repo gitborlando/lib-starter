@@ -3,7 +3,11 @@
 msg_file=$1
 msg=$(cat "$msg_file")
 source=$2
-branch=$(git symbolic-ref --short HEAD)
+branch=$(git symbolic-ref --short HEAD 2>/dev/null || echo "detached")
+
+if [[ "$branch" == "detached" ]]; then
+  exit 0
+fi
 
 if [[ "$source" == "squash" || "$source" == "rebase" ]]; then
   exit 0
