@@ -1,19 +1,13 @@
 {
-  "name": "starter",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "prepare": "npx husky"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^24.0.15",
-    "husky": "^9.1.7",
-    "pretty-quick": "^4.2.2",
-    "tsx": "^4.20.3",
-    "typescript": "^5.8.3"
+    "prepare": "npx husky",
+    "clean": "rm -rf node_modules pnpm-lock.yaml && pnpm -r clean",
+    "changeset": "changeset",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run"
   },
   "prettier": {
     "printWidth": 85,
@@ -23,5 +17,22 @@
     "semi": false,
     "singleQuote": true,
     "jsxSingleQuote": true
-  }
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.5",
+    "@types/node": "^24.0.15",
+    "husky": "^9.1.7",
+    "pretty-quick": "^4.2.2",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "publishConfig": {
+    "access": "private",
+    "registry": "https://registry.npmjs.org"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
