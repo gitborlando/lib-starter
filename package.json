@@ -1,13 +1,12 @@
 {
   "version": "1.0.0",
   "type": "module",
+  "private": true,
   "scripts": {
     "prepare": "npx husky",
     "clean": "rm -rf node_modules pnpm-lock.yaml && pnpm -r clean",
     "changeset": "changeset",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:run": "vitest run"
+    "gen:package": "npx tsx scripts/gen-package.ts"
   },
   "prettier": {
     "printWidth": 85,
@@ -27,11 +26,7 @@
     "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4",
-    "@vitest/ui": "^3.2.4",
-  },
-  "publishConfig": {
-    "access": "private",
-    "registry": "https://registry.npmjs.org"
+    "@vitest/ui": "^3.2.4"
   },
   "keywords": [],
   "author": "",
